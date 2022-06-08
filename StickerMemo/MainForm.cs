@@ -47,6 +47,9 @@ namespace StickerMemo
 
             this.menu.Items[2].Click += (_sender, _e) =>
             {
+                bool top = this.TopMost;
+                this.TopMost = false;
+
                 SaveFileDialog save = new SaveFileDialog() { Filter = "text file(*.txt)|*.txt" };
 
                 if (save.ShowDialog() == DialogResult.OK)
@@ -55,23 +58,47 @@ namespace StickerMemo
                     stream.Write(this.main_text.Text);
                     stream.Close();
                 }
+
+                this.TopMost = top;
             };
 
-            this.main_text.Font = new Font("굴림", 11, FontStyle.Regular);
-            this.main_text.SelectionFont = this.main_text.Font;
+            this.main_text.Font = new Font("굴림체", 11, FontStyle.Regular);
 
             this.main_text.EnableAutoDragDrop = true;
             this.main_text.DragDrop += (_sender, _e) =>
             {
+                bool top = this.TopMost;
+                this.TopMost = false;
+
                 if (MessageBox.Show("You want to copy data?", "caption", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
+                    this.main_text.Text = "";
+                    SendKeys.Send("{DELETE}");
+
                     foreach (string path in (string[])_e.Data.GetData(DataFormats.FileDrop, true))
                     {
-                        this.main_text.Text = "";
-                        this.main_text.Text = "\r\n" + new StreamReader(new FileStream(path, FileMode.Open)).ReadLine();
+                        FileStream stream = new FileStream(path, FileMode.Open);
+                        string str = new StreamReader(stream).ReadToEnd();
+
+                        this.main_text.Text = str;
+
+                        stream.Close();
                     }
                 }
+                else
+                {
+                    string str = this.main_text.Text;
+
+                    this.main_text.Text = "";
+                    SendKeys.Send("{DELETE}");
+
+                    this.main_text.Text = str;
+                }
+
+
+                this.TopMost = top;
             };
+
 
             System.Windows.Forms.Timer t = new System.Windows.Forms.Timer();
 
