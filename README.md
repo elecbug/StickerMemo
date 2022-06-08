@@ -1,1 +1,1 @@
-# StickerMemo
+# Sticker Memo
