@@ -32,9 +32,6 @@
             this.menu = new System.Windows.Forms.MenuStrip();
             this.resetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.focusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toggleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.upToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.downToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -67,31 +64,9 @@
             // 
             // focusToolStripMenuItem
             // 
-            this.focusToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toggleToolStripMenuItem,
-            this.upToolStripMenuItem,
-            this.downToolStripMenuItem});
             this.focusToolStripMenuItem.Name = "focusToolStripMenuItem";
-            this.focusToolStripMenuItem.Size = new System.Drawing.Size(50, 20);
-            this.focusToolStripMenuItem.Text = "Focus";
-            // 
-            // toggleToolStripMenuItem
-            // 
-            this.toggleToolStripMenuItem.Name = "toggleToolStripMenuItem";
-            this.toggleToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.toggleToolStripMenuItem.Text = "Toggle";
-            // 
-            // upToolStripMenuItem
-            // 
-            this.upToolStripMenuItem.Name = "upToolStripMenuItem";
-            this.upToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.upToolStripMenuItem.Text = "Up";
-            // 
-            // downToolStripMenuItem
-            // 
-            this.downToolStripMenuItem.Name = "downToolStripMenuItem";
-            this.downToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.downToolStripMenuItem.Text = "Down";
+            this.focusToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
+            this.focusToolStripMenuItem.Text = "Focus Toggle";
             // 
             // MainForm
             // 
@@ -118,9 +93,6 @@
         private System.Windows.Forms.MenuStrip menu;
         private System.Windows.Forms.ToolStripMenuItem resetToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem focusToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toggleToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem upToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem downToolStripMenuItem;
     }
 }
 

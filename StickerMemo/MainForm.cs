@@ -33,6 +33,11 @@ namespace StickerMemo
                 this.main_text.Text = "";
             };
 
+            this.menu.Items[1].Click += (_sender, _e) =>
+            {
+                this.TopMost = !this.TopMost;
+            };
+
             this.main_text.Font = new Font("굴림체", 11, FontStyle.Regular);
             this.main_text.SelectionFont = this.main_text.Font;
         }
