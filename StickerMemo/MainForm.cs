@@ -33,21 +33,26 @@ namespace StickerMemo
 
             this.menu.Items[0].Click += (_sender, _e) =>
             {
-                if (MessageBox.Show("You want to reset?", "caption", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                bool top = this.TopMost;
+                this.TopMost = false;
+
+                OpenFileDialog open = new OpenFileDialog() { Filter = "all file(*.*)|*.*" };
+
+                if (open.ShowDialog() == DialogResult.OK)
                 {
-                    this.main_text.Text = "";
+                    StreamReader stream = new StreamReader(new FileStream(open.FileName, FileMode.Open));
+                    this.main_text.Text = stream.ReadToEnd();
+                    stream.Close();
                 }
+
+                this.TopMost = top;
             };
             this.menu.Items[1].Click += (_sender, _e) =>
-            {
-                this.TopMost = !this.TopMost;
-            };
-            this.menu.Items[2].Click += (_sender, _e) =>
             {
                 bool top = this.TopMost;
                 this.TopMost = false;
 
-                SaveFileDialog save = new SaveFileDialog() { Filter = "text file(*.txt)|*.txt" };
+                SaveFileDialog save = new SaveFileDialog() { Filter = "all file(*.*)|*.*" };
 
                 if (save.ShowDialog() == DialogResult.OK)
                 {
@@ -57,6 +62,17 @@ namespace StickerMemo
                 }
 
                 this.TopMost = top;
+            };
+            this.menu.Items[2].Click += (_sender, _e) =>
+            {
+                if (MessageBox.Show("You want to reset?", "caption", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    this.main_text.Text = "";
+                }
+            };
+            this.menu.Items[3].Click += (_sender, _e) =>
+            {
+                this.TopMost = !this.TopMost;
             };
 
             this.main_text.DragDrop += (_sender, _e) =>
