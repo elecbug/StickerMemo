@@ -38,7 +38,11 @@
             // 
             // main_text
             // 
-            this.main_text.Font = new System.Drawing.Font("굴림체", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.main_text.AcceptsTab = true;
+            this.main_text.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.main_text.EnableAutoDragDrop = true;
+            this.main_text.Font = new System.Drawing.Font("MS PGothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.main_text.ForeColor = System.Drawing.SystemColors.Info;
             this.main_text.Location = new System.Drawing.Point(12, 27);
             this.main_text.Name = "main_text";
             this.main_text.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
@@ -48,6 +52,7 @@
             // 
             // menu
             // 
+            this.menu.BackColor = System.Drawing.SystemColors.HighlightText;
             this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.resetToolStripMenuItem,
             this.focusToolStripMenuItem,
@@ -60,6 +65,7 @@
             // 
             // resetToolStripMenuItem
             // 
+            this.resetToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
             this.resetToolStripMenuItem.Name = "resetToolStripMenuItem";
             this.resetToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
             this.resetToolStripMenuItem.Text = "Reset";
@@ -80,6 +86,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.ClientSize = new System.Drawing.Size(381, 371);
             this.Controls.Add(this.main_text);
             this.Controls.Add(this.menu);
@@ -87,7 +94,6 @@
             this.Name = "MainForm";
             this.Text = "Sticker Memo";
             this.TopMost = true;
-            this.Load += new System.EventHandler(this.LoadForm);
             this.menu.ResumeLayout(false);
             this.menu.PerformLayout();
             this.ResumeLayout(false);

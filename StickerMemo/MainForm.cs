@@ -23,14 +23,13 @@ namespace StickerMemo
                 this.main_text.Size
                 = this.ClientSize - new Size(this.main_text.Margin.Horizontal * 4, this.main_text.Margin.Vertical * 3 + this.menu.Size.Height);
             };
-
             this.FormClosed += (_sender, _e) =>
             {
                 Properties.Settings.Default.MainMemo = this.main_text.Text;
+                Properties.Settings.Default.FormSize = this.Size;
                 Properties.Settings.Default.Save();
             };
-
-            this.StartPosition = FormStartPosition.CenterScreen;
+            this.Size = Properties.Settings.Default.FormSize;
 
             this.menu.Items[0].Click += (_sender, _e) =>
             {
@@ -39,12 +38,10 @@ namespace StickerMemo
                     this.main_text.Text = "";
                 }
             };
-
             this.menu.Items[1].Click += (_sender, _e) =>
             {
                 this.TopMost = !this.TopMost;
             };
-
             this.menu.Items[2].Click += (_sender, _e) =>
             {
                 bool top = this.TopMost;
@@ -62,9 +59,6 @@ namespace StickerMemo
                 this.TopMost = top;
             };
 
-            this.main_text.Font = new Font("굴림체", 11, FontStyle.Regular);
-
-            this.main_text.EnableAutoDragDrop = true;
             this.main_text.DragDrop += (_sender, _e) =>
             {
                 bool top = this.TopMost;
@@ -98,24 +92,20 @@ namespace StickerMemo
 
                 this.TopMost = top;
             };
+            this.main_text.Text = Properties.Settings.Default.MainMemo;
+            this.main_text.SelectionFont = this.main_text.Font;
 
-
-            System.Windows.Forms.Timer t = new System.Windows.Forms.Timer();
-
-            t.Interval = 5000;
-
+            System.Windows.Forms.Timer t = new System.Windows.Forms.Timer
+            {
+                Interval = 5000
+            };
             t.Tick += (sender, e) =>
             {
                 Properties.Settings.Default.MainMemo = this.main_text.Text;
+                Properties.Settings.Default.FormSize = this.Size;
                 Properties.Settings.Default.Save();
             };
-
             t.Start();
-        }
-
-        private void LoadForm(object sender, EventArgs e)
-        {
-            this.main_text.Text = Properties.Settings.Default.MainMemo;
         }
     }
 }
