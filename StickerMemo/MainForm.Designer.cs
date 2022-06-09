@@ -28,12 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.main_text = new System.Windows.Forms.RichTextBox();
             this.menu = new System.Windows.Forms.MenuStrip();
+            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.resetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.focusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,6 +66,18 @@
             this.menu.TabIndex = 1;
             this.menu.Text = "menuStrip1";
             // 
+            // toolStripMenuItem1
+            // 
+            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(48, 20);
+            this.toolStripMenuItem1.Text = "Open";
+            // 
+            // saveAsToolStripMenuItem
+            // 
+            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
+            this.saveAsToolStripMenuItem.Text = "Save";
+            // 
             // resetToolStripMenuItem
             // 
             this.resetToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
@@ -78,18 +91,6 @@
             this.focusToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
             this.focusToolStripMenuItem.Text = "Focus Toggle";
             // 
-            // saveAsToolStripMenuItem
-            // 
-            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.saveAsToolStripMenuItem.Text = "Save";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(48, 20);
-            this.toolStripMenuItem1.Text = "Open";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -98,6 +99,7 @@
             this.ClientSize = new System.Drawing.Size(381, 371);
             this.Controls.Add(this.main_text);
             this.Controls.Add(this.menu);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menu;
             this.Name = "MainForm";
             this.Text = "Sticker Memo";

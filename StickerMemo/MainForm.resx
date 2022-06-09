@@ -123,4 +123,29 @@
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>44</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAMMOAADDDgAAAAAAAAAA
+        AADAwMD/gP///4D///+A////gP///4D///+A////gP///4D///+A////gP///4D///+A////gP///4D/
+        //+A////AID//wCA//8AgP//////////////////////////////////////////////////////////
+        /////////////8DAwP+A////gP///4D///+A////gP///4D///+A////gP///4D///+A////gP///4D/
+        //+A////gP///4D///8AgP//AID//wCA//+A////gP///4D///+A////gP///4D///+A////gP///4D/
+        //+A////gP///4D///+A////wMDA////////////////////////////////////////////////////
+        /////////////////////////////wCA//8AgP//AID//4D///+A////gP///4D///+A////gP///4D/
+        //+A////gP///4D///+A////gP///4D////AwMD/gP///4D///+A////gP///4D///+A////gP///4D/
+        //+A////gP///4D///+A////gP///4D///+A////AID//wCA//8AgP//////////////////////////
+        /////////////////////////////////////////////8DAwP+A////gP///4D///+A////gP///4D/
+        //+A////gP///4D///+A////gP///4D///+A////gP///4D///8AgP//AID//wCA//+A////gP///4D/
+        //+A////gP///4D///+A////gP///4D///+A////gP///4D///+A////wMDA////////////////////
+        /////////////////////////////////////////////////////////////wCA//8AgP//AID//4D/
+        //+A////gP///4D///+A////gP///4D///+A////gP///4D///+A////gP///4D////AwMD/gP///4D/
+        //+A////gP///4D///+A////gP///4D///+A////gP///4D///+A////gP///4D///+A////AID//wCA
+        //8AgP///////////////////////////////////////////////////////////////////////8DA
+        wP+A////gP///4D///+A////gP///4D///+A////gP///4D///+A////gP///4D///+A////gP///4D/
+        //8AgP//AID//wCA//+A////gP///4D///+A////gP///4D///+A////gP///4D///+A////gP///4D/
+        //+A////AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAAAAAAA==
+</value>
+  </data>
 </root>
