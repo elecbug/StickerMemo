@@ -46,5 +46,17 @@ namespace StickerMemo.Properties {
                 this["FormSize"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("10, 10")]
+        public global::System.Drawing.Point StartPosition {
+            get {
+                return ((global::System.Drawing.Point)(this["StartPosition"]));
+            }
+            set {
+                this["StartPosition"] = value;
+            }
+        }
     }
 }

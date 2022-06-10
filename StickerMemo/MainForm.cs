@@ -18,6 +18,8 @@ namespace StickerMemo
         {
             InitializeComponent();
 
+            this.Visible = true;
+            this.Location = Properties.Settings.Default.StartPosition;
             this.Resize += (_sender, _e) =>
             {
                 this.main_text.Size
@@ -27,6 +29,7 @@ namespace StickerMemo
             {
                 Properties.Settings.Default.MainMemo = this.main_text.Text;
                 Properties.Settings.Default.FormSize = this.Size;
+                Properties.Settings.Default.StartPosition = this.Location;
                 Properties.Settings.Default.Save();
             };
             this.Size = Properties.Settings.Default.FormSize;
@@ -119,6 +122,7 @@ namespace StickerMemo
             {
                 Properties.Settings.Default.MainMemo = this.main_text.Text;
                 Properties.Settings.Default.FormSize = this.Size;
+                Properties.Settings.Default.StartPosition = this.Location;
                 Properties.Settings.Default.Save();
             };
             t.Start();
