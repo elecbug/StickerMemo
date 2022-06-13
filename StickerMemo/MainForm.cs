@@ -18,7 +18,7 @@ namespace StickerMemo
         {
             InitializeComponent();
 
-            this.menu.Items[0].Click += (_sender, _e) =>
+            this.tool_open.Click += (_sender, _e) =>
             {
                 bool top = this.TopMost;
                 this.TopMost = false;
@@ -34,7 +34,7 @@ namespace StickerMemo
 
                 this.TopMost = top;
             };
-            this.menu.Items[1].Click += (_sender, _e) =>
+            this.tool_save.Click += (_sender, _e) =>
             {
                 bool top = this.TopMost;
                 this.TopMost = false;
@@ -50,16 +50,32 @@ namespace StickerMemo
 
                 this.TopMost = top;
             };
-            this.menu.Items[2].Click += (_sender, _e) =>
+            this.tool_reset.Click += (_sender, _e) =>
             {
                 if (MessageBox.Show("You want to reset?", "caption", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
                     this.main_text.Text = "";
                 }
             };
-            this.menu.Items[3].Click += (_sender, _e) =>
+            this.tool_focus.Click += (_sender, _e) =>
             {
                 this.TopMost = !this.TopMost;
+            };
+            this.tool_opacity.DoubleClick += (_sender, _e) =>
+            {
+                this.Opacity = 1D;
+            };
+            this.tool_opacity_up.Click += (_sender, _e) =>
+            {
+                this.Opacity += 0.1D;
+            };
+            this.tool_opacity_down.Click += (_sender, _e) =>
+            {
+                this.Opacity -= 0.1D;
+                if (this.Opacity < 0.1D)
+                {
+                    this.Opacity = 0.1D;
+                }
             };
 
             this.Resize += (_sender, _e) =>
@@ -106,13 +122,15 @@ namespace StickerMemo
                 Properties.Settings.Default.FormSize = this.Size;
                 Properties.Settings.Default.StartPosition = this.Location;
                 Properties.Settings.Default.TopMost = this.TopMost;
+                Properties.Settings.Default.Opacity = this.Opacity;
                 Properties.Settings.Default.Save();
             };
 
-            this.Visible = true;
-            this.Location = Properties.Settings.Default.StartPosition;
             this.Size = Properties.Settings.Default.FormSize;
             this.TopMost = Properties.Settings.Default.TopMost;
+            this.Opacity = Properties.Settings.Default.Opacity;
+            this.Visible = true;
+            this.Location = Properties.Settings.Default.StartPosition;
 
             this.main_text.SelectionFont = this.main_text.Font;
             this.main_text.Text = Properties.Settings.Default.MainMemo;
@@ -127,6 +145,7 @@ namespace StickerMemo
                 Properties.Settings.Default.FormSize = this.Size;
                 Properties.Settings.Default.StartPosition = this.Location;
                 Properties.Settings.Default.TopMost = this.TopMost;
+                Properties.Settings.Default.Opacity = this.Opacity;
                 Properties.Settings.Default.Save();
             };
             t.Start();

@@ -31,10 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.main_text = new System.Windows.Forms.RichTextBox();
             this.menu = new System.Windows.Forms.MenuStrip();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.saveAsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.resetToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.focusToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.tool_open = new System.Windows.Forms.ToolStripMenuItem();
+            this.tool_save = new System.Windows.Forms.ToolStripMenuItem();
+            this.tool_reset = new System.Windows.Forms.ToolStripMenuItem();
+            this.tool_focus = new System.Windows.Forms.ToolStripMenuItem();
+            this.tool_opacity = new System.Windows.Forms.ToolStripMenuItem();
+            this.tool_opacity_up = new System.Windows.Forms.ToolStripMenuItem();
+            this.tool_opacity_down = new System.Windows.Forms.ToolStripMenuItem();
             this.menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,40 +59,62 @@
             // 
             this.menu.BackColor = System.Drawing.SystemColors.HighlightText;
             this.menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1,
-            this.saveAsToolStripMenuItem,
-            this.resetToolStripMenuItem,
-            this.focusToolStripMenuItem});
+            this.tool_open,
+            this.tool_save,
+            this.tool_reset,
+            this.tool_focus,
+            this.tool_opacity});
             this.menu.Location = new System.Drawing.Point(0, 0);
             this.menu.Name = "menu";
             this.menu.Size = new System.Drawing.Size(381, 24);
             this.menu.TabIndex = 1;
             this.menu.Text = "menuStrip1";
             // 
-            // toolStripMenuItem1
+            // tool_open
             // 
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(48, 20);
-            this.toolStripMenuItem1.Text = "Open";
+            this.tool_open.Name = "tool_open";
+            this.tool_open.Size = new System.Drawing.Size(48, 20);
+            this.tool_open.Text = "Open";
             // 
-            // saveAsToolStripMenuItem
+            // tool_save
             // 
-            this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(44, 20);
-            this.saveAsToolStripMenuItem.Text = "Save";
+            this.tool_save.Name = "tool_save";
+            this.tool_save.Size = new System.Drawing.Size(44, 20);
+            this.tool_save.Text = "Save";
             // 
-            // resetToolStripMenuItem
+            // tool_reset
             // 
-            this.resetToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.resetToolStripMenuItem.Name = "resetToolStripMenuItem";
-            this.resetToolStripMenuItem.Size = new System.Drawing.Size(47, 20);
-            this.resetToolStripMenuItem.Text = "Reset";
+            this.tool_reset.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.tool_reset.Name = "tool_reset";
+            this.tool_reset.Size = new System.Drawing.Size(47, 20);
+            this.tool_reset.Text = "Reset";
             // 
-            // focusToolStripMenuItem
+            // tool_focus
             // 
-            this.focusToolStripMenuItem.Name = "focusToolStripMenuItem";
-            this.focusToolStripMenuItem.Size = new System.Drawing.Size(90, 20);
-            this.focusToolStripMenuItem.Text = "Focus Toggle";
+            this.tool_focus.Name = "tool_focus";
+            this.tool_focus.Size = new System.Drawing.Size(90, 20);
+            this.tool_focus.Text = "Focus Toggle";
+            // 
+            // tool_opacity
+            // 
+            this.tool_opacity.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tool_opacity_up,
+            this.tool_opacity_down});
+            this.tool_opacity.Name = "tool_opacity";
+            this.tool_opacity.Size = new System.Drawing.Size(60, 20);
+            this.tool_opacity.Text = "Opacity";
+            // 
+            // tool_opacity_up
+            // 
+            this.tool_opacity_up.Name = "tool_opacity_up";
+            this.tool_opacity_up.Size = new System.Drawing.Size(180, 22);
+            this.tool_opacity_up.Text = "Up(10%)";
+            // 
+            // tool_opacity_down
+            // 
+            this.tool_opacity_down.Name = "tool_opacity_down";
+            this.tool_opacity_down.Size = new System.Drawing.Size(180, 22);
+            this.tool_opacity_down.Text = "Down(10%)";
             // 
             // MainForm
             // 
@@ -115,10 +140,13 @@
 
         private System.Windows.Forms.RichTextBox main_text;
         private System.Windows.Forms.MenuStrip menu;
-        private System.Windows.Forms.ToolStripMenuItem resetToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem focusToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveAsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem tool_reset;
+        private System.Windows.Forms.ToolStripMenuItem tool_focus;
+        private System.Windows.Forms.ToolStripMenuItem tool_save;
+        private System.Windows.Forms.ToolStripMenuItem tool_open;
+        private System.Windows.Forms.ToolStripMenuItem tool_opacity;
+        private System.Windows.Forms.ToolStripMenuItem tool_opacity_up;
+        private System.Windows.Forms.ToolStripMenuItem tool_opacity_down;
     }
 }
 
