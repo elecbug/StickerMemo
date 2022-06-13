@@ -18,22 +18,6 @@ namespace StickerMemo
         {
             InitializeComponent();
 
-            this.Visible = true;
-            this.Location = Properties.Settings.Default.StartPosition;
-            this.Resize += (_sender, _e) =>
-            {
-                this.main_text.Size
-                = this.ClientSize - new Size(this.main_text.Margin.Horizontal * 4, this.main_text.Margin.Vertical * 3 + this.menu.Size.Height);
-            };
-            this.FormClosed += (_sender, _e) =>
-            {
-                Properties.Settings.Default.MainMemo = this.main_text.Text;
-                Properties.Settings.Default.FormSize = this.Size;
-                Properties.Settings.Default.StartPosition = this.Location;
-                Properties.Settings.Default.Save();
-            };
-            this.Size = Properties.Settings.Default.FormSize;
-
             this.menu.Items[0].Click += (_sender, _e) =>
             {
                 bool top = this.TopMost;
@@ -78,6 +62,11 @@ namespace StickerMemo
                 this.TopMost = !this.TopMost;
             };
 
+            this.Resize += (_sender, _e) =>
+            {
+                this.main_text.Size
+                = this.ClientSize - new Size(this.main_text.Margin.Horizontal * 4, this.main_text.Margin.Vertical * 3 + this.menu.Size.Height);
+            };
             this.main_text.DragDrop += (_sender, _e) =>
             {
                 bool top = this.TopMost;
@@ -111,8 +100,22 @@ namespace StickerMemo
 
                 this.TopMost = top;
             };
-            this.main_text.Text = Properties.Settings.Default.MainMemo;
+            this.FormClosed += (_sender, _e) =>
+            {
+                Properties.Settings.Default.MainMemo = this.main_text.Text;
+                Properties.Settings.Default.FormSize = this.Size;
+                Properties.Settings.Default.StartPosition = this.Location;
+                Properties.Settings.Default.TopMost = this.TopMost;
+                Properties.Settings.Default.Save();
+            };
+
+            this.Visible = true;
+            this.Location = Properties.Settings.Default.StartPosition;
+            this.Size = Properties.Settings.Default.FormSize;
+            this.TopMost = Properties.Settings.Default.TopMost;
+
             this.main_text.SelectionFont = this.main_text.Font;
+            this.main_text.Text = Properties.Settings.Default.MainMemo;
 
             System.Windows.Forms.Timer t = new System.Windows.Forms.Timer
             {
@@ -123,6 +126,7 @@ namespace StickerMemo
                 Properties.Settings.Default.MainMemo = this.main_text.Text;
                 Properties.Settings.Default.FormSize = this.Size;
                 Properties.Settings.Default.StartPosition = this.Location;
+                Properties.Settings.Default.TopMost = this.TopMost;
                 Properties.Settings.Default.Save();
             };
             t.Start();

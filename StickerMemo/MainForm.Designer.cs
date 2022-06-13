@@ -41,10 +41,10 @@
             // main_text
             // 
             this.main_text.AcceptsTab = true;
-            this.main_text.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.main_text.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.main_text.EnableAutoDragDrop = true;
-            this.main_text.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.main_text.ForeColor = System.Drawing.SystemColors.Info;
+            this.main_text.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.main_text.ForeColor = System.Drawing.SystemColors.Desktop;
             this.main_text.Location = new System.Drawing.Point(12, 27);
             this.main_text.Name = "main_text";
             this.main_text.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
