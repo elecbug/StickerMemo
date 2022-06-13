@@ -4,4 +4,4 @@
 - Open: Open file in outside by open file dialog
 - Save: Save file where outside by save file dialog
 - Reset: Remove all memo
-- Focus Toggle: Form focus mode toggle that top most
+- Focus Toggle: Form mode that toggle top most function
