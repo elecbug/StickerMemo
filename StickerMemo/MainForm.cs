@@ -137,7 +137,7 @@ namespace StickerMemo
 
             System.Windows.Forms.Timer t = new System.Windows.Forms.Timer
             {
-                Interval = 5000
+                Interval = 60000
             };
             t.Tick += (sender, e) =>
             {
